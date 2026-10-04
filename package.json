@@ -1,0 +1,12 @@
+{
+  "name": "trinity-marshall-redesign",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A website redesign proposal for Trinity Episcopal School in Marshall, Texas.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "serve": "python -m http.server 8080 --directory dist"
+  }
+}
