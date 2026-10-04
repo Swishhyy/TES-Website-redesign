@@ -17,9 +17,10 @@ for (const filename of filenames) {
   }
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
   if (new Set(ids).size !== ids.length) failures.push(`${filename}: duplicate ids`);
-  for (const [, attribute, raw] of html.matchAll(/\b(href|src)="([^"]+)"/g)) {
+  for (const [, attribute, raw] of html.matchAll(/\b(href|src|data-fallback)="([^"]+)"/g)) {
     if (/^(https?:|mailto:|tel:|data:)/.test(raw)) { externalReferences++; continue; }
-    const [path, fragment] = raw.split('#');
+    const [location, fragment] = raw.split('#');
+    const path = location.split('?')[0];
     const target = resolve(dirname(join(root, filename)), path || filename);
     if (!target.startsWith(root)) { failures.push(`${filename}: reference escapes site: ${raw}`); continue; }
     try {

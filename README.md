@@ -7,8 +7,11 @@ A simpler, informative website proposal for Trinity Episcopal School in Marshall
 - Seven complete pages: Home, About, Programs, Admissions, Parent Resources, Calendar, and Contact, plus a custom 404 page.
 - The original mission and vision wording from the school’s About page.
 - School photographs and the existing fleur-de-lis brand mark.
+- Trinity's navy, royal blue, light blue, and white colors carried through the navigation, page headings, links, and footer.
+- A homepage reading section connected to the school's live Renaissance Accelerated Reader tracker, with a clearly dated image fallback.
 - Readable 2026–2027 tuition tables and key calendar dates, with the original published schedules available.
 - Existing FACTS applications, returning-student enrollment, parent portal, donation, and school document links.
+- Direct PDF links for both uniform codes, the school-published 2025–2026 handbook, and all six 2026–2027 supply lists, labeled by grade.
 - Responsive navigation, keyboard support, a skip link, print styling, and reduced-motion support.
 
 ## Run locally
@@ -32,6 +35,8 @@ Open `http://localhost:8080`.
 - Run `npm run build` after changing page content. CSS and JavaScript are served directly from `dist/`.
 
 The checked-in `dist/` directory can be hosted on any static web server. `.openai/hosting.json` identifies the private proposal preview on Sites.
+
+The reading tracker uses the public image endpoint already embedded on the school’s current homepage. Its month and totals update through Renaissance. If that image cannot load, the site shows `reading-snapshot-2026-10-04.png` with a visible snapshot date; replace that fallback when preparing a later review. Styles and scripts receive content-based URL versions during the build so returning visitors receive the latest design.
 
 ## Proposal boundary
 
